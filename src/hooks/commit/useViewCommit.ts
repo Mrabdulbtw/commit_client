@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const useViewCommit = (owner: string, repo: string, sha: string) => {
 
-
   const getCommit = async (owner: string, repo: string, sha: string) => {
     const { data } = await axios.get(`http://localhost:5000/api/v1/commit/view/${owner}/${repo}/${sha}`);
     return data;
@@ -13,6 +12,7 @@ export const useViewCommit = (owner: string, repo: string, sha: string) => {
     queryKey: ["commit", owner, repo, sha],
     queryFn: () => getCommit(owner, repo, sha),
     enabled: !!owner && !!repo && !!sha,
+    staleTime:1000 * 60 * 5
   });
 
   return {
