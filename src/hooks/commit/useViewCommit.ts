@@ -4,7 +4,7 @@ import axios from "axios";
 export const useViewCommit = (owner: string, repo: string, sha: string) => {
   const getCommit = async (owner: string, repo: string, sha: string) => {
     const { data } = await axios.get(
-      `${process.env.BACKEND_URL||"http://localhost:5000/api/v1/commit/view"
+      `${process.env.NEXT_PUBLIC_BACKEND_URL||"http://localhost:5000/api/v1/commit/view"
       }/${owner}/${repo}/${sha}`
     );
     return data;
