@@ -18,13 +18,15 @@ export default function CommitHeader({ commit }: tProps) {
     <div className="grid grid-cols-1 xl:grid-cols-5 gap-6 mb-8 p-2 ">
       <div className="col-span-1 xl:col-span-3 flex gap-4 ">
         <div className="relative h-14 w-14 shrink-0">
-          <Image
-            src={commit?.author?.avatar}
-            alt={commit?.author?.name}
-            fill
-            loading="lazy"
-            className="rounded-full object-cover"
-          />
+          <div className="relative h-14 w-14 shrink-0">
+            <Image
+              src={commit?.author?.avatar}
+              alt={commit?.author?.name}
+              width={56}
+              height={56}
+              className="rounded-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="flex-1 min-w-0">

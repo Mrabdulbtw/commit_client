@@ -7,7 +7,7 @@ type tProps = {
 };
 export default function FileAccordionItem({ files }: tProps) {
   return (
-    <div className="overflow-hidden">
+    <div className="space-y-4">
       {files.map((file, i) => (
         <DiffViewer key={i} patch={file.patch} filename={file.filename} />
       ))}

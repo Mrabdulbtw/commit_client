@@ -36,7 +36,7 @@ export default function MainContainer({ owner, repo, sha }: tProps) {
   }
 
   return (
-    <main className="xl:min-w-7xl max-w-xl xl:max-w-7xl mx-auto mt-8 p-5">
+    <main  className="w-full max-w-7xl mx-auto mt-8 px-4 md:px-6 pb-5">
       <CommitHeader commit={data?.data.commit} />
       <FileAccordionItem files={data?.data?.files} />
     </main>
