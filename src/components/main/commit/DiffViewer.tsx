@@ -20,8 +20,8 @@ export default function FileDiff({ filename, patch }: tProps) {
       <div className="flex items-center">
         <ChevronDown
           className={cn(
-            "size-5 cursor-pointer transition ",
-            !open && "rotate-270"
+            "size-5 cursor-pointer  transition ",
+            !open && "-rotate-90"
           )}
           onClick={() => setOpen(!open)}
         />

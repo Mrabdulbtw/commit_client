@@ -19,9 +19,10 @@ export default function CommitHeader({ commit }: tProps) {
       <div className="col-span-1 xl:col-span-3 flex gap-4 ">
         <div className="relative h-14 w-14 shrink-0">
           <Image
-            src={commit?.author.avatar}
-            alt={commit?.author.name}
+            src={commit?.author?.avatar}
+            alt={commit?.author?.name}
             fill
+            loading="lazy"
             className="rounded-full object-cover"
           />
         </div>
@@ -34,9 +35,9 @@ export default function CommitHeader({ commit }: tProps) {
           <p className="mt-2 text-sm text-gray-500">
             Authored by{" "}
             <span className="font-semibold text-slate-800">
-              {commit?.author.name}
+              {commit?.author?.name}
             </span>{" "}
-            {formatDistanceToNow(new Date(commit?.author.date), {
+            {formatDistanceToNow(new Date(commit?.author?.date), {
               addSuffix: true,
             })}
           </p>
@@ -53,9 +54,9 @@ export default function CommitHeader({ commit }: tProps) {
         <p className="text-sm text-gray-500">
           Commit by{" "}
           <span className="font-semibold text-gray-900">
-            {commit?.committer.name}
+            {commit?.committer?.name}
           </span>{" "}
-          {formatDistanceToNow(new Date(commit?.committer.date), {
+          {formatDistanceToNow(new Date(commit?.committer?.date), {
             addSuffix: true,
           })}
         </p>
